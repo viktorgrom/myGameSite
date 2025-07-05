@@ -3,10 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>War Strategy & Conflict: WW3</title>
+    <title>War Strategy & Conflict: WW3 - Official Website</title>
+    <link rel="icon" href="images/512gameIcon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #ecf0f1; /* Light gray for text */
+            background-color: #2c3e50; /* Dark blue-gray for background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .hero-banner {
+            width: 100%;
+            height: 350px; /* Adjust height as needed */
+            background: url('images/1024_500.png') no-repeat center center / cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            position: relative; /* Needed for absolute positioning of text/icon */
+        }
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text readability */
+        }
+        .hero-content {
+            position: relative; /* Place content above overlay */
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5em; /* Larger font for hero title */
+            color: #e74c3c; /* Red for main title */
+            margin-bottom: 10px;
+        }
+        .hero-content p {
+            font-size: 1.5em; /* Larger font for hero subtitle */
+            margin-top: 0;
+        }
+        .game-icon {
+            width: 120px; /* Size of the icon */
+            height: 120px;
+            border-radius: 20%; /* Slightly rounded corners for the icon */
+            border: 3px solid #f39c12; /* Orange border around the icon */
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.7); /* Orange glow effect */
+            margin-bottom: 20px; /* Space below the icon */
+        }
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: #f39c12; /* Orange for subtitles */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        h3 {
+            color: #bdc3c7; /* Lighter gray for sub-subtitles */
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .container {
+            max-width: 900px;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: #34495e; /* Match header background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        ul li {
+            background-color: #4a677a; /* Slightly darker shade for list items */
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        a {
+            color: #3498db; /* Blue for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #27ae60; /* Green for download button */
+            color: white;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-download:hover {
+            background-color: #2ecc71; /* Lighter green on hover */
+            transform: scale(1.05);
+        }
+        .social-links {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 1.5em;
+            color: #9b59b6; /* Purple for social links */
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #be8ad2;
+        }
+        footer {
+            background-color: #34495e; /* Match header background */
+            width: 100%;
+            padding: 20px 0;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 1em;
+            color: #7f8c8d; /* Gray for footer links */
+        }
+        .footer-links a:hover {
+            color: #bdc3c7;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 250px;
+            }
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .hero-content p {
+                font-size: 1.2em;
+            }
+            .game-icon {
+                width: 90px;
+                height: 90px;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .container {
+                padding: 15px;
+                margin: 0 15px 30px 15px; /* Add horizontal margin on smaller screens */
+            }
+            .btn-download {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+            .social-links a {
+                font-size: 1.2em;
+                margin: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to War Strategy & Conflict: WW3 site</h1>
-    <p>All information ubout game apdates is in our Facebook</p>
+    <div class="hero-banner">
+        <div class="hero-content">
+            <img src="images/512gameIcon.png" alt="War Strategy & Conflict WW3 Game Icon" class="game-icon">
+            <h1>War Strategy & Conflict: WW3</h1>
+            <p>Lead your nation to glory in this WW3 sandbox war strategy and diplomacy game!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <p>Rewrite history and lead your nation in this epic WW3 simulator and WW2-inspired sandbox strategy game!</p>
+        <p>Step into the role of a leader and guide any country to glory or ruin. Experience a grand strategy simulator that blends RTS, diplomacy, and sandbox gameplay. Will you achieve victory through military dominance, tactical alliances, or strategic development? The choice is yours!</p>
+
+        <h2>🔥 Game Features 🔥</h2>
+        <h3>💼 Country Management</h3>
+        <ul>
+            <li>Lead over 200 nations with real-world data: population, economy, and borders of 2025, 1990 & 1960 periods!</li>
+            <li>Balance taxes, manage resources, and invest in infrastructure to grow your nation.</li>
+        </ul>
+
+        <h3>⚔️ Military Actions</h3>
+        <ul>
+            <li>Command diverse military units: infantry, air force, navy, and tanks.</li>
+            <li>Engage in real-time battles to outmaneuver your enemies.</li>
+        </ul>
+
+        <h3>🤝 Diplomacy and Espionage</h3>
+        <ul>
+            <li>Form alliances, declare wars, and negotiate to secure global dominance.</li>
+            <li>Use espionage to gather intelligence and weaken opponents.</li>
+        </ul>
+
+        <h3>🚀 Technology and Development</h3>
+        <ul>
+            <li>Research advanced technologies for a strategic edge in the conflict of nations.</li>
+            <li>Build and upgrade structures to strengthen your economy and military.</li>
+        </ul>
+
+        <h3>🌐 Global Sandbox Gameplay</h3>
+        <ul>
+            <li>Explore a massive world map with dynamic events inspired by real-world history.</li>
+            <li>React to challenges such as economic crises and political conflicts in this age of history.</li>
+        </ul>
+
+        <h2>🎯 Why Players Love It 🎯</h2>
+        <ul>
+            <li><strong>Unique Gameplay:</strong> Combines the best of WW2 strategy, country war map games, and diplomacy simulators.</li>
+            <li><strong>Replayability:</strong> Endless paths to explore—economic prosperity, military conquest, or diplomatic triumph.</li>
+            <li><strong>Immersive Experience:</strong> Stunning visuals and realistic scenarios set in a sandbox world war.</li>
+        </ul>
+
+        <h2>🛠️ How to Play 🛠️</h2>
+        <ul>
+            <li><strong>Choose your country:</strong> Take control of any nation in 2025.</li>
+            <li><strong>Set your strategy:</strong> Decide whether to prioritize country war, diplomacy or economic development.</li>
+            <li><strong>Forge your destiny:</strong> Shape the future of your nation and dominate the world!</li>
+        </ul>
+
+        <p>Expand your influence not only through military power but also through wise governance and technological progress. Evolving world map filled with opportunities and unexpected twists.</p>
+
+        <a href="https://play.google.com/store/apps/details?id=com.Zoroplay.GlobalGenesis" target="_blank" class="btn-download">Download on Google Play!</a>
+    </div>
+
+    <div class="social-links">
+        <h2>Join Our Community! 🌍💬</h2>
+        <a href="https://discord.gg/V4qeD63Zx2" target="_blank" title="Join us on Discord">Discord</a> |
+        <a href="https://www.facebook.com/profile.php?id=100068772151616" target="_blank" title="Find us on Facebook">Facebook</a>
+    </div>
+
+    <footer>
+        <p>Developer: Viono</p>
+        <p>Contact: <a href="mailto:vionogames@gmail.com">vionogames@gmail.com</a></p>
+        <div class="footer-links">
+            <a href="https://war-strategy-conflict.netlify.app/privacy-policy.html" target="_blank">Privacy Policy</a> |
+            <a href="https://war-strategy-conflict.netlify.app/terms-of-use.html" target="_blank">Terms of Use</a>
+        </div>
+        <p>&copy; 2025 Viono. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
