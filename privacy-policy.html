@@ -44,12 +44,58 @@
             margin-top: 2em;
             text-align: right;
         }
+        /* Стилі для кнопок */
+        .store-buttons {
+            display: flex;
+            justify-content: flex-start; /* Вирівнювання по лівому краю */
+            gap: 15px; /* Відступ між кнопками */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #007aff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .store-button.app-store {
+            background-color: #000;
+        }
+        .store-button.app-store:hover {
+            background-color: #333;
+        }
+        .store-button.play-store {
+            background-color: #4285F4;
+        }
+        .store-button.play-store:hover {
+            background-color: #357ae8;
+        }
+        .store-button img {
+            height: 24px;
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
 
     <h1>Privacy Policy</h1>
     <p class="last-updated">Last updated: July 5, 2025</p>
+
+    <div class="store-buttons">
+        <a href="https://apps.apple.com/us/app/war-strategy-conflict-ww3/id6749019142" target="_blank" class="store-button app-store">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+            Download on the App Store
+        </a>
+        <a href="#" target="_blank" class="store-button play-store">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+            Get it on Google Play
+        </a>
+    </div>
 
     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
     <p>We use Your Personal Data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
